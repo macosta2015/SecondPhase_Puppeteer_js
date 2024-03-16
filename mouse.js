@@ -18,7 +18,7 @@ const puppeteer = require('puppeteer');
         // Capture mouse movements and log coordinates
         await newPage.evaluate(() => {
             document.addEventListener('mousemove', (event) => {
-                console.log('Mouse coordinates:', { x: event.clientX, y: event.clientY });
+                console.log(`Mouse coordinates: X = ${event.clientX}, Y = ${event.clientY}`);
             });
         });
 
@@ -30,4 +30,3 @@ const puppeteer = require('puppeteer');
         console.error('An error occurred:', error);
     }
 })();
-
