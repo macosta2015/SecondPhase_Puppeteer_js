@@ -15,10 +15,18 @@ const puppeteer = require('puppeteer');
         // Navigate to Google
         await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 
-        // Click on specified coordinates
-        await page.mouse.click(663, 352);
+        // Press and hold at X:550, Y:109
+        await page.mouse.move(550, 109);
+        await page.mouse.down();
 
-        console.log('Clicked on X: 663, Y: 352');
+        console.log('Mouse pressed at X:550, Y:109');
+
+        // Continuous move to X:222, Y:106 without releasing the mouse
+        let interval = setInterval(async () => {
+            await page.mouse.move(222, 106);
+        }, 50); // Adjust the interval as needed
+
+        console.log('Mouse moved to X:222, Y:106 (holding)...');
 
         // Keep the page open for further interaction or observation
         await new Promise(() => { });
