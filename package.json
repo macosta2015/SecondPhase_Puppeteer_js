@@ -4,7 +4,8 @@
   "description": "Automated software testing",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "test2": "node mouse.js"
   },
   "repository": {
     "type": "git",

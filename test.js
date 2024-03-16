@@ -137,20 +137,6 @@ require('dotenv').config(); // Load environment variables from .env file
             console.error(`${desiredEditOption} option not found.`);
         }
 
-
-        // console.log('Waiting for the "Edit" option to appear...');
-        // await newPage.waitForSelector('.context-menu-item-span', { visible: true });
-
-        // console.log('Getting all "Edit" options...');
-        // const menuItems = await newPage.$$('.context-menu-item-span');
-
-        // console.log('Clicking on the third "Edit" option...');
-        // if (menuItems.length >= 3) {
-        //     await menuItems[0].click();
-        // } else {
-        //     console.error('Third "Edit" option not found.');
-        // }
-
         console.log('Waiting for 5 seconds after navigation...');
         await new Promise(resolve => setTimeout(resolve, 5000));
 
