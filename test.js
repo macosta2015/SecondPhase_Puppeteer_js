@@ -18,9 +18,12 @@ require('dotenv').config(); // Load environment variables from .env file
         console.log('Filling out form fields...');
         await newPage.type('input[name="email"].form-control', process.env.EMAIL);
         await newPage.type('input[name="password"].form-control', process.env.PASSWORD);
+        console.log(await newPage.$eval('input[name="email"].form-control', input => input.getBoundingClientRect())); // Output x and y coordinates
+        console.log(await newPage.$eval('input[name="password"].form-control', input => input.getBoundingClientRect())); // Output x and y coordinates
 
         console.log('Clicking on the submit button...');
         await newPage.click('button.btn.btn-primary.os-signin-button');
+        console.log(await newPage.$eval('button.btn.btn-primary.os-signin-button', button => button.getBoundingClientRect())); // Output x and y coordinates
 
         console.log('Waiting for 10 seconds after navigation...');
         await new Promise(resolve => setTimeout(resolve, 10000));
@@ -30,6 +33,7 @@ require('dotenv').config(); // Load environment variables from .env file
             const thirdButton = document.querySelectorAll('.documents-filter-icon')[2];
             if (thirdButton) {
                 thirdButton.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+                console.log(thirdButton.getBoundingClientRect()); // Output x and y coordinates
             } else {
                 console.error('Third button not found.');
             }
