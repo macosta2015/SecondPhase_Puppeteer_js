@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
-    "test2": "node mouse.js"
+    "test2": "node mouse.js",
+    "test3": "node test2.js"
   },
   "repository": {
     "type": "git",
