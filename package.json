@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node test.js",
     "test2": "node mouse.js",
-    "test3": "node test2.js"
+    "test3": "node test2.js",
+    "test4": "node test3.js"
   },
   "repository": {
     "type": "git",
