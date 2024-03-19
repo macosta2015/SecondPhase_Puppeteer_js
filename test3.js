@@ -15,17 +15,18 @@ const puppeteer = require('puppeteer');
         // Navigate to Google
         await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 
-        // Capture mouse movements and log coordinates
-        await page.evaluate(() => {
-            document.addEventListener('mousemove', (event) => {
-                console.log(`Mouse coordinates: X = ${event.clientX}, Y = ${event.clientY}`);
-            });
-        });
+        // Click and hold at X:210, Y:247
+        await page.mouse.move(210, 247);
+        await page.mouse.down();
+
+        console.log('Mouse clicked and held at X:210, Y:247');
+
+        // Move to X:546, Y:247 without releasing the mouse button
+        await page.mouse.move(546, 247);
+
+        console.log('Mouse moved to X:546, Y:247 (holding)...');
 
         // Keep the page open for further interaction or observation
-        console.log('Move the mouse over the page to see the coordinates...');
-
-        // Prevent the script from exiting
         await new Promise(() => { });
 
     } catch (error) {
